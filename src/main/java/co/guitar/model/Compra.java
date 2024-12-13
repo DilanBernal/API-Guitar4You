@@ -2,7 +2,9 @@ package co.guitar.model;
 
 import java.io.Serializable;
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import java.math.BigDecimal;
 import java.util.Date;
@@ -14,6 +16,8 @@ import java.util.List;
  * 
  */
 @Entity
+@NoArgsConstructor
+@AllArgsConstructor
 @Data
 @NamedQuery(name="Compra.findAll", query="SELECT c FROM Compra c")
 public class Compra implements Serializable {
