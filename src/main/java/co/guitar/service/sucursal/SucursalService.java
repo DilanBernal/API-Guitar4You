@@ -8,7 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import co.guitar.dao.sucursal.ISucursalDao;
 import co.guitar.model.Sucursal;
 
-public class SucursalService implements ISucursalService{
+public class SucursalService implements ISucursalService {
 
     @Autowired
     ISucursalDao dao;
@@ -37,7 +37,5 @@ public class SucursalService implements ISucursalService{
     public Sucursal guardar(Sucursal sucursal) {
         return dao.guardar(sucursal);
     }
-
-
 
 }
