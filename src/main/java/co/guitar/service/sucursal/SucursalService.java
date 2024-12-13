@@ -4,10 +4,12 @@ import java.util.List;
 
 import org.locationtech.jts.awt.PointShapeFactory.Point;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import co.guitar.dao.sucursal.ISucursalDao;
 import co.guitar.model.Sucursal;
 
+@Service
 public class SucursalService implements ISucursalService {
 
     @Autowired

@@ -3,6 +3,7 @@ package co.guitar.service.devolucion;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import co.guitar.dao.devolucion.IDevolucionDao;
 import co.guitar.dto.ReporteDevolucionesDTO;
@@ -12,6 +13,7 @@ import co.guitar.model.Detalledevolucion;
 import co.guitar.model.Devolucion;
 import co.guitar.model.Sucursal;
 
+@Service
 public class DevolucionService implements IDevolucionService {
 
     @Autowired

@@ -3,12 +3,13 @@ package co.guitar.service.producto;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import co.guitar.dao.producto.IProductoDao;
 import co.guitar.model.Producto;
 
-public class ProductoService implements IProductoService{
-
+@Service
+public class ProductoService implements IProductoService {
 
     @Autowired
     IProductoDao dao;
@@ -42,7 +43,5 @@ public class ProductoService implements IProductoService{
     public Producto guardar(Producto producto) {
         return dao.guardar(producto);
     }
-
-
 
 }

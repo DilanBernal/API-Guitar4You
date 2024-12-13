@@ -3,12 +3,14 @@ package co.guitar.service.compra;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import co.guitar.dao.compra.ICompraDao;
 import co.guitar.model.Cliente;
 import co.guitar.model.Compra;
 import co.guitar.model.EstadoCompra;
 
+@Service
 public class CompraService implements ICompraService {
 
     @Autowired
