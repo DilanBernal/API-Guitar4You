@@ -2,8 +2,8 @@ package co.guitar.service.cliente;
 
 import java.util.List;
 import java.util.Optional;
+import org.locationtech.jts.geom.Point;
 
-import org.locationtech.jts.awt.PointShapeFactory.Point;
 
 import co.guitar.model.Cliente;
 
@@ -13,7 +13,7 @@ public interface IClienteService {
 
     List<Cliente> traerTodosLosClientes();
 
-    Optional<Cliente> traerUnClientePorId();
+    Optional<Cliente> traerUnClientePorId(int id);
 
     Optional<Cliente> traerUnClientePorEmail(String email);
 

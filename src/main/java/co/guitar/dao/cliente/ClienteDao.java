@@ -16,6 +16,7 @@ public class ClienteDao implements IClienteDao {
     @Autowired
     private IClienteJpa jpa;
 
+
     @Override
     public Cliente obtenerPorNombreCliente(String nombreCliente) {
         return jpa.findByNombreCliente(nombreCliente);
@@ -60,4 +61,10 @@ public class ClienteDao implements IClienteDao {
     public List<Cliente> obtenerTodos() {
         return jpa.findAll();
     }
+
+    @Override
+    public Cliente agregarCliente(Cliente cliente) {
+        return jpa.save(cliente);
+    }
+
 }

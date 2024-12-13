@@ -9,6 +9,8 @@ import co.guitar.model.Cliente;
 
 public interface IClienteDao {
 
+    Cliente agregarCliente(Cliente cliente);
+
     Cliente obtenerPorNombreCliente(String nombre);
 
     Optional<Cliente> obtenerPorCorreoCliente(String correoCliente);
