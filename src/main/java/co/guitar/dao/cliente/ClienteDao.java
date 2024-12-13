@@ -5,6 +5,7 @@ import org.springframework.stereotype.Repository;
 
 import co.guitar.model.Cliente;
 
+import java.util.List;
 import java.util.Optional;
 
 import org.locationtech.jts.geom.Point;
@@ -21,7 +22,7 @@ public class ClienteDao implements IClienteDao {
     }
 
     @Override
-    public Cliente obtenerPorCorreoCliente(String correoCliente) {
+    public Optional<Cliente> obtenerPorCorreoCliente(String correoCliente) {
         return jpa.findByCorreoCliente(correoCliente);
     }
 
@@ -31,8 +32,8 @@ public class ClienteDao implements IClienteDao {
     }
 
     @Override
-    public Cliente obtenerPorDevolucion(int idDevolucion) {
-        return jpa.findByDevolucionsCliente(idDevolucion);
+    public List<Cliente> obtenerPorDevolucion(int idDevolucion) {
+        return jpa.findByDevolucion(idDevolucion);
     }
 
     @Override
@@ -53,5 +54,10 @@ public class ClienteDao implements IClienteDao {
     @Override
     public void eliminarPorIdCliente(int idCliente) {
         jpa.deleteByIdCliente(idCliente);
+    }
+
+    @Override
+    public List<Cliente> obtenerTodos() {
+        return jpa.findAll();
     }
 }

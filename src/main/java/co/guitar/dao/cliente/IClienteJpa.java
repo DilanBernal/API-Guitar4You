@@ -5,6 +5,10 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 
 import co.guitar.model.Cliente;
+
+import java.util.List;
+import java.util.Optional;
+
 import org.locationtech.jts.geom.Point;
 
 
@@ -12,11 +16,11 @@ public interface IClienteJpa extends JpaRepository<Cliente, Integer>{
     
     Cliente findByNombreCliente(String nombreCliente);
 
-    Cliente findByCorreoCliente(String correo);
+    Optional<Cliente> findByCorreoCliente(String correo);
 
     Cliente findByIdCliente(int idCliente);
 
-    Cliente findByDevolucionsCliente(int idDevolucion);
+    List<Cliente> findByDevolucion(int idDevolucion);
 
     Cliente findByCompras(int idCompra);
 

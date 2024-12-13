@@ -8,7 +8,7 @@ import java.util.List;
 
 @Repository
 public class ProductoDao implements IProductoDao {
-
+    
     @Autowired
     private IProductoJpa jpa;
 
