@@ -53,8 +53,8 @@ public class DevolucionController {
 
     // Traer devoluciones por ID
     @GetMapping(path = "/{idDevolucion}")
-    public ResponseEntity<List<Devolucion>> traerPorIdDevolucion(@PathVariable int idDevolucion) {
-        List<Devolucion> devoluciones = service.traerPorIdDevolucion(idDevolucion);
+    public ResponseEntity<Devolucion> traerPorIdDevolucion(@PathVariable int idDevolucion) {
+        Devolucion devoluciones = service.traerPorIdDevolucion(idDevolucion);
         return new ResponseEntity<>(devoluciones, HttpStatus.OK);
     }
 

@@ -15,7 +15,7 @@ public interface IDevolucionService {
 
     List<ReporteDevolucionesDTO> traeReporteDevoluciones(int mes, int anio);
 
-    List<Devolucion> traerPorIdDevolucion(int idDevolucion);
+    Devolucion traerPorIdDevolucion(int idDevolucion);
     
     List<Devolucion> traerPorScurusal(Sucursal sucursal);
 

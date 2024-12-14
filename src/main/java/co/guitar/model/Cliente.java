@@ -2,11 +2,15 @@ package co.guitar.model;
 
 import java.io.Serializable;
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import java.util.List;
 
 import org.locationtech.jts.geom.Point;
+
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 
 
 /**
@@ -15,6 +19,8 @@ import org.locationtech.jts.geom.Point;
  */
 @Entity
 @Data
+@NoArgsConstructor
+@AllArgsConstructor
 @NamedQuery(name = "Cliente.findAll", query = "SELECT c FROM Cliente c")
 public class Cliente implements Serializable {
 	private static final long serialVersionUID = 1L;
@@ -36,8 +42,17 @@ public class Cliente implements Serializable {
 	@Column(name = "nombre_cliente")
 	private String nombreCliente;
 
-	@Column(name = "ubicacion_cliente")
+	@JsonDeserialize(using = PointDeserializer.class)
+	@Column(name = "ubicacion_cliente", columnDefinition = "geometry(Point, 4326)")
 	private Point ubicacionCliente;
+
+	public Point getUbicacionCliente(){
+		return ubicacionCliente;
+	}
+
+	public void setUbicacionCliente(Point ubicacionCliente){
+		this.ubicacionCliente = ubicacionCliente;
+	}
 
 	// bi-directional many-to-one association to Compra
 	@OneToMany(mappedBy = "cliente")
@@ -45,7 +60,7 @@ public class Cliente implements Serializable {
 
 	// bi-directional many-to-one association to Devolucion
 	@OneToMany(mappedBy = "cliente")
-	private List<Devolucion> devolucions;
+	private List<Devolucion> devolucion;
 
 	public Compra addCompra(Compra compra) {
 		getCompras().add(compra);
@@ -62,14 +77,14 @@ public class Cliente implements Serializable {
 	}
 
 	public Devolucion addDevolucion(Devolucion devolucion) {
-		getDevolucions().add(devolucion);
+		getDevolucion().add(devolucion);
 		devolucion.setCliente(this);
 
 		return devolucion;
 	}
 
 	public Devolucion removeDevolucion(Devolucion devolucion) {
-		getDevolucions().remove(devolucion);
+		getDevolucion().remove(devolucion);
 		devolucion.setCliente(null);
 
 		return devolucion;

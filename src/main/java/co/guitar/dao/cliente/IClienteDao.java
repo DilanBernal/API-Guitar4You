@@ -6,6 +6,8 @@ import java.util.Optional;
 import org.locationtech.jts.geom.Point;
 
 import co.guitar.model.Cliente;
+import co.guitar.model.Compra;
+import co.guitar.model.Devolucion;
 
 public interface IClienteDao {
 
@@ -19,9 +21,9 @@ public interface IClienteDao {
 
     Optional<Cliente> obtenerPorIdCliente(int idCliente);
 
-    List<Cliente> obtenerPorDevolucion(int idDevolucion);
+    Cliente obtenerPorDevolucion(Devolucion devolucion);
 
-    Cliente obtenerPorCompra(int idCompra);
+    Cliente obtenerPorCompra(Compra compra);
 
     Cliente obtenerPorUbicacion(Point ubicacionCliente);
 

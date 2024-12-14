@@ -1,5 +1,6 @@
 package co.guitar.controller;
 
+import co.guitar.dto.ClienteRegisterDTO;
 import co.guitar.model.Cliente;
 import co.guitar.service.cliente.IClienteService;
 import org.locationtech.jts.geom.Point;
@@ -20,8 +21,8 @@ public class ClienteController {
 
     // Registrar un cliente
     @PostMapping(path = "registrar")
-    public ResponseEntity<Cliente> registrarCliente(@RequestBody Cliente cliente) {
-        Cliente datosCliente = service.registrarCliente(cliente);
+    public ResponseEntity<Cliente> registrarCliente(@RequestBody ClienteRegisterDTO clienteDTO) {
+        Cliente datosCliente = service.registrarCliente(clienteDTO);
         return new ResponseEntity<>(datosCliente, HttpStatus.ACCEPTED);
     }
 

@@ -11,7 +11,7 @@ import lombok.Setter;
 @Getter
 @Data
 @Setter
-public class CompraRequest {
+public class CompraRequestDTO {
     private int idCliente;
     private int idProducto;
     private int cantidad;

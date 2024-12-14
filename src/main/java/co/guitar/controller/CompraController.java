@@ -1,6 +1,6 @@
 package co.guitar.controller;
 
-import co.guitar.dto.CompraRequest;
+import co.guitar.dto.CompraRequestDTO;
 import co.guitar.model.Cliente;
 import co.guitar.model.Compra;
 import co.guitar.model.EstadoCompra;
@@ -21,7 +21,7 @@ public class CompraController {
 
     // Registrar una compra
     @PostMapping()
-    public ResponseEntity<Void> registrarCompra(@RequestBody CompraRequest compraReques) {
+    public ResponseEntity<Void> registrarCompra(@RequestBody CompraRequestDTO compraReques) {
 
         service.registrarCompra(compraReques.getIdCliente(), compraReques.getIdProducto(), compraReques.getCantidad());
 

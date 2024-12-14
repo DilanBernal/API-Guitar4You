@@ -4,6 +4,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import co.guitar.model.Cliente;
+import co.guitar.model.Compra;
+import co.guitar.model.Devolucion;
 
 import java.util.List;
 import java.util.Optional;
@@ -33,13 +35,13 @@ public class ClienteDao implements IClienteDao {
     }
 
     @Override
-    public List<Cliente> obtenerPorDevolucion(int idDevolucion) {
-        return jpa.findByDevolucion(idDevolucion);
+    public Cliente obtenerPorDevolucion(Devolucion devolucion) {
+        return jpa.findByDevolucion(devolucion);
     }
 
     @Override
-    public Cliente obtenerPorCompra(int idCompra) {
-        return jpa.findByCompras(idCompra);
+    public Cliente obtenerPorCompra(Compra compra) {
+        return jpa.findByCompras(compra);
     }
 
     @Override

@@ -28,7 +28,7 @@ public class DevolucionDao implements IDevolucionDao {
     }
 
     @Override
-    public List<Devolucion> obtenerPorIdDevolucion(int idDevolucion) {
+    public Devolucion obtenerPorIdDevolucion(int idDevolucion) {
         return jpa.findByIdDevolucion(idDevolucion);
     }
 

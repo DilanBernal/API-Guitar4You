@@ -4,12 +4,12 @@ import java.util.List;
 import java.util.Optional;
 import org.locationtech.jts.geom.Point;
 
-
+import co.guitar.dto.ClienteRegisterDTO;
 import co.guitar.model.Cliente;
 
 public interface IClienteService {
 
-    Cliente registrarCliente(Cliente cliente);
+    Cliente registrarCliente(ClienteRegisterDTO clienteDto);
 
     List<Cliente> traerTodosLosClientes();
 
@@ -18,6 +18,8 @@ public interface IClienteService {
     Optional<Cliente> traerUnClientePorEmail(String email);
 
     Cliente traerPorCompra(int idCompra);
+
+    Cliente traerPorDevolucion(int idDevolucion);
 
     Cliente traerPorUbicacion(Point ubicacionCliente);
 

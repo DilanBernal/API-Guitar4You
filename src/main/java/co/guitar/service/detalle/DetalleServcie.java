@@ -6,7 +6,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import co.guitar.dao.detalle.IDetalleDao;
-import co.guitar.model.Cliente;
 import co.guitar.model.Detallecompra;
 import co.guitar.model.Producto;
 
@@ -31,14 +30,11 @@ public class DetalleServcie implements IDetalleService{
         return dao.registerDetalle(detalle);
     }
 
-    @Override
-    public List<Detallecompra> traerPorCliente(Cliente cliente) {
-        return dao.getByCliente(cliente);
-    }
 
     @Override
     public void deleteById(int id) {
         dao.deleteById(id);
     }
+
 
 }

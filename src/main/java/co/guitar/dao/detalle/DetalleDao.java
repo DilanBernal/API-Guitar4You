@@ -1,6 +1,5 @@
 package co.guitar.dao.detalle;
 
-import co.guitar.model.Cliente;
 import co.guitar.model.Detallecompra;
 import co.guitar.model.Producto;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -28,12 +27,6 @@ public class DetalleDao implements IDetalleDao {
     @Override
     public Detallecompra registerDetalle(Detallecompra detalle) {
         return jpa.save(detalle);
-    }
-
-    @Override
-    public List<Detallecompra> getByCliente(Cliente cliente) {
-        // Necesitarías un método en jpa para obtener los detalles de la compra por cliente
-        return jpa.findByCliente(cliente);
     }
 
     @Override

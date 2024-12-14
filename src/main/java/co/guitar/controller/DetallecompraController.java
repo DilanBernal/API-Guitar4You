@@ -1,6 +1,5 @@
 package co.guitar.controller;
 
-import co.guitar.model.Cliente;
 import co.guitar.model.Detallecompra;
 import co.guitar.model.Producto;
 import co.guitar.service.detalle.IDetalleService;
@@ -35,18 +34,9 @@ public class DetallecompraController {
     // Traer detalles de compra por producto
     @GetMapping(path = "/producto/{idProducto}")
     public ResponseEntity<List<Detallecompra>> traerPorProducto(@PathVariable int idProducto) {
-        Producto producto = new Producto();  // Aquí se podría crear un producto con el ID si es necesario
+        Producto producto = new Producto(); // Aquí se podría crear un producto con el ID si es necesario
         producto.setIdProducto(idProducto);
         List<Detallecompra> detalles = service.traerPorProducto(producto);
-        return new ResponseEntity<>(detalles, HttpStatus.OK);
-    }
-
-    // Traer detalles de compra por cliente
-    @GetMapping(path = "/cliente/{idCliente}")
-    public ResponseEntity<List<Detallecompra>> traerPorCliente(@PathVariable int idCliente) {
-        Cliente cliente = new Cliente();  // Aquí se podría crear un cliente con el ID si es necesario
-        cliente.setIdCliente(idCliente);
-        List<Detallecompra> detalles = service.traerPorCliente(cliente);
         return new ResponseEntity<>(detalles, HttpStatus.OK);
     }
 

@@ -20,7 +20,7 @@ public interface IDevolucionJpa extends JpaRepository<Devolucion, Integer> {
     @Procedure(name = "generarReporteDevoluciones")
     List<ReporteDevolucionesDTO> generarReporteDevoluciones(@Param("mes") int mes, @Param("anio") int anio);
 
-    List<Devolucion> findByIdDevolucion(int idDevolucion);
+    Devolucion findByIdDevolucion(int idDevolucion);
 
     List<Devolucion> findBySucursal(Sucursal sucursal);
 

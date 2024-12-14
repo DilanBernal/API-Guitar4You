@@ -30,7 +30,7 @@ public class DevolucionService implements IDevolucionService {
     }
 
     @Override
-    public List<Devolucion> traerPorIdDevolucion(int idDevolucion) {
+    public Devolucion traerPorIdDevolucion(int idDevolucion) {
         return dao.obtenerPorIdDevolucion(idDevolucion);
     }
 

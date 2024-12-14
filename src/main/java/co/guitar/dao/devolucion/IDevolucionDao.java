@@ -15,7 +15,7 @@ public interface IDevolucionDao {
 
     List<ReporteDevolucionesDTO> generarReporteDevoluciones(int mes, int anio);
 
-    List<Devolucion> obtenerPorIdDevolucion(int idDevolucion);
+    Devolucion obtenerPorIdDevolucion(int idDevolucion);
 
     List<Devolucion> obtenerPorSucursal(Sucursal sucursal);
 
